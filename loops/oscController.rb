@@ -1,4 +1,5 @@
 #Sonic Pi Loop Controller by Robin Newman
+#Modified by Andrew Chan
 #VERSION 2 ADDS CONTROL OF BACKGROUND PULSE AND SCREEN
 #Tested on a Mac: this version NOT sutiable for Pi3
 #in particular uses some new :loop samples only in version 3.1
@@ -8,8 +9,8 @@
 #This version uses 11 push buttons on TouchOSC for input and 1 LED on TouchOSC for output
 #Can be modified to use any suitable OSC source thant can give on/off signals when a button is pressed
 use_real_time
-use_bpm 120
-path="~/lighthouse/lhl-final/samples/"
+use_bpm 100
+path="~/lighthouse/sonic-pi/samples/"
 
 
 use_debug false
