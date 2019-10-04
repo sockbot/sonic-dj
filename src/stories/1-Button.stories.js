@@ -1,19 +1,20 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { storiesOf } from "@storybook/react";
 
-import Button from "../../components/button/Button";
+import Button from "../components/Button";
 
 export default {
   title: "Sonic DJ Button"
 };
 
 export const button = () => (
-  <Button onClick={action("clicked")} label={"JUNGLE"} active={false} />
+  <Button onClick={action("clicked")} label={"JUNGLE"} active={true} />
 );
 
-// export const text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+// export const inactiveButton = () => {
+//   <Button onClick={action("clicked")} label={"JUNGLE"} active={false} />;
+// };
 
-// storiesOf("Button", module).add("Inactive", () => {
-//   <Button onClick={action("clicked")}>Hello Button</Button>;
-// });
+export const text = () => (
+  <Button onClick={action("clicked")}>Hello Button</Button>
+);

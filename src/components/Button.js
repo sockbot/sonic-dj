@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import "../../src/App.scss";
+import "./Button.scss";
 
 function Button(props) {
   const { label, active, onClick } = props;
@@ -9,9 +9,9 @@ function Button(props) {
     active: active
   });
   return (
-    <div className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} onClick={onClick}>
       {label}
-    </div>
+    </button>
   );
 }
 
