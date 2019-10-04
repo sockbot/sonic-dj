@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import Button from "../components/Button";
 
 export default {
-  title: "Sonic DJ Button"
+  title: "Single Button"
 };
 
 export const activeButton = () => (

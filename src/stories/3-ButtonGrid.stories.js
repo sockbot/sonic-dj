@@ -7,6 +7,7 @@ export default {
   title: "Button Grid"
 };
 
+const instruments = ["Lead", "Bass", "Drum", "Rise"];
 export const grid = () => <ButtonGrid />;
 grid.story = {
   name: "Button Grid"

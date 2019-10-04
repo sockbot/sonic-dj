@@ -1,0 +1,9 @@
+.button-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & div {
+    font-family: sans-serif;
+  }
+}
