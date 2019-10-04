@@ -1,0 +1,16 @@
+.button {
+  border: 0px;
+  display: flex;
+  height: 100px;
+  width: 100px;
+  background-color: #a9a695;
+  box-shadow: 8px 8px 16px #666;
+  font-family: sans-serif;
+  color: #666666;
+  align-items: center;
+  justify-content: center;
+  &.active {
+    background-color: #fbe571;
+    box-shadow: inset 4px 4px 8px #666;
+  }
+}
