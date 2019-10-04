@@ -33,6 +33,6 @@
   justify-content: center;
   &.active {
     background-color: #fbe571;
-    box-shadow: inset;
+    box-shadow: inset 4px 4px 8px #666;
   }
 }
