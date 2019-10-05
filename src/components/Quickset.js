@@ -16,7 +16,7 @@ function Quickset(props) {
 
   return (
     <div class="quickset">
-      <button>{quicksetAction}</button>
+      <button class="quickset-button">{quicksetAction}</button>
       <div class="button-row">{buttonRow}</div>
     </div>
   );
