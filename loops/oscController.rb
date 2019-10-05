@@ -8,10 +8,23 @@
 #Also may have to cut down use of fx calls on Pi3 as may overload it otherwise.
 #This version uses 11 push buttons on TouchOSC for input and 1 LED on TouchOSC for output
 #Can be modified to use any suitable OSC source thant can give on/off signals when a button is pressed
+
+# require '~/lighthouse/sonic-dj/loops/loops.rb'
+
 use_real_time
 use_bpm 100
-path="~/lighthouse/sonic-pi/samples/"
+path="~/lighthouse/sonic-dj/samples/"
 
+define :beep_lead do
+  8.times do
+    with_fx :reverb, room: 0.9 do
+      with_fx :slicer, phase: 1, wave: 1, mix: 1.0 do
+        synth :hoover, note: [:Db4, :G3, :Bb3, :F4].ring.tick, attack: 2, release: 2, amp: 0.5
+        sleep 4
+      end
+    end
+  end
+end
 
 use_debug false
 use_osc_logging false

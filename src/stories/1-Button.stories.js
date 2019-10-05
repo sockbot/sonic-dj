@@ -4,17 +4,19 @@ import { action } from "@storybook/addon-actions";
 import Button from "../components/Button";
 
 export default {
-  title: "Sonic DJ Button"
+  title: "Single Button"
 };
 
-export const button = () => (
+export const activeButton = () => (
   <Button onClick={action("clicked")} label={"JUNGLE"} active={true} />
 );
+activeButton.story = {
+  name: "Active Button"
+};
 
-// export const inactiveButton = () => {
-//   <Button onClick={action("clicked")} label={"JUNGLE"} active={false} />;
-// };
-
-export const text = () => (
-  <Button onClick={action("clicked")}>Hello Button</Button>
+export const inactiveButton = () => (
+  <Button onClick={action("clicked")} label={"BOOGIE"} active={false} />
 );
+inactiveButton.story = {
+  name: "Inactive Button"
+};
