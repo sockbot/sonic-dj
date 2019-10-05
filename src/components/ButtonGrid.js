@@ -4,15 +4,17 @@ import ButtonColumn from "./ButtonColumn";
 import "./ButtonGrid.scss";
 
 function ButtonGrid(props) {
-  const { instrument } = props;
-  return (
-    <div class="button-grid">
-      <ButtonColumn instrument={instrument} />
-      <ButtonColumn instrument={instrument} />
-      <ButtonColumn instrument={instrument} />
-      <ButtonColumn instrument={instrument} />
-    </div>
-  );
+  const { columns } = props;
+  const buttonGrid = columns.map(column => {
+    return (
+      <ButtonColumn
+        colLabel={column.colLabel}
+        activeIndex={column.activeIndex}
+        buttons={column.buttons}
+      />
+    );
+  });
+  return <div class="button-grid">{buttonGrid}</div>;
 }
 
 export default ButtonGrid;

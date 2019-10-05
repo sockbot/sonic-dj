@@ -4,14 +4,21 @@ import Button from "./Button";
 import "./ButtonColumn.scss";
 
 function ButtonColumn(props) {
-  const { instrument } = props;
-  // const instrument = "Lead";
+  const { colLabel, activeIndex, buttons } = props;
+  const buttonColumn = buttons.map((button, index) => {
+    return (
+      <Button
+        label={button.label}
+        active={activeIndex === index}
+        onClick={button.onClick}
+      />
+    );
+  });
+
   return (
     <div class="button-column">
-      <div>{instrument}</div>
-      <Button label="HELLO WORLD" />
-      <Button label="0" active={true} />
-      <Button label="a" />
+      <div>{colLabel}</div>
+      {buttonColumn}
     </div>
   );
 }

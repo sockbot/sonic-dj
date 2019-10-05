@@ -8,14 +8,14 @@ export default {
 };
 
 export const activeButton = () => (
-  <Button onClick={() => action("clicked")} label={"JUNGLE"} active={true} />
+  <Button onClick={action("clicked")} label={"JUNGLE"} active={true} />
 );
 activeButton.story = {
   name: "Active Button"
 };
 
 export const inactiveButton = () => (
-  <Button onClick={action("clicked")} label={"JUNGLE"} active={false} />
+  <Button onClick={action("clicked")} label={"BOOGIE"} active={false} />
 );
 inactiveButton.story = {
   name: "Inactive Button"
