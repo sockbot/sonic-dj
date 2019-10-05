@@ -5,13 +5,13 @@ import "./SetButton.scss";
 
 function SetButton(props) {
   const { label, color, active, onClick } = props;
-  const buttonClass = classnames("button", {
+  const setbuttonClass = classnames("setbutton", {
     active: active
   });
 
   return (
     <button
-      className={buttonClass}
+      className={setbuttonClass}
       style={{ "background-color": color }}
       onClick={onClick}
     >
