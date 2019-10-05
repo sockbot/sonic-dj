@@ -1,13 +1,5 @@
-live_loop :beep do
-  with_fx :reverb, room: 0.9 do
-    with_fx :slicer, phase: 1, wave: 1, mix: 1.0 do
-      synth :hoover, note: [:Db4, :G3, :Bb3, :F4].ring.tick, attack: 2, release: 4, amp: 0.5
-      sleep 6
-    end
-  end
-end
 
-live_loop :simple_bass do
+live_loop :simple_drum do
   4.times do
     sample :bd_haus
     sleep 0.5
@@ -80,7 +72,7 @@ with_fx :reverb do
   end
 end
 
-with_fx :distortion 
+with_fx :distortion do
 live_loop :distort_bass do
   8.times do
     sample :bass_dnb_f, pitch: 0, finish: 0.6
@@ -133,4 +125,37 @@ live_loop :electro_lead do
     end
   end
   sleep t
+end
+
+live_loop :snare_rise do
+  8.times do
+    sample :drum_snare_hard
+    sleep 0.75
+  end
+  8.times do
+    sample :drum_snare_hard
+    sleep 0.375
+  end
+  8.times do
+    sample :drum_snare_hard
+    sleep 0.1875
+  end
+  sleep 1
+end
+
+live_loop :test_rise do
+  use_synth  :dark_ambience
+  p = ([:b5, :a5, :fs5] * 4).ring
+  8.times do
+    play p.tick, amp: 0.5
+    sleep 0.5
+  end
+  16.times do
+    play p.tick, amp: 1
+    sleep 0.25
+  end
+  16.times do
+    play p.tick, amp: 1.5
+    sleep 0.125
+  end
 end
