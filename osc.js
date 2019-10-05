@@ -30,13 +30,13 @@ const playPhrase = loops => {
   }
 };
 
-const intro = [
-  { control: "/1/push1", value: 1 },
-  { control: "/1/push2", value: 1 },
-  { control: "/1/push3", value: 1 }
-];
+// const intro = [
+//   { control: "/1/push1", value: 1 },
+//   { control: "/1/push2", value: 1 },
+//   { control: "/1/push3", value: 1 }
+// ];
 
-playPhrase(intro);
+// playPhrase(intro);
 
 // playLoop({ control: "/1/push1", value: 1 });
 
@@ -58,9 +58,9 @@ playPhrase(intro);
 // dropB 8 bars
 // outro 8 bars
 
-class Song {
-  constructor(intro, lowBreak, highBreak, buildup, dropA, dropB, outro) {}
-  playPhrase(phrase) {}
-}
+// class Song {
+//   constructor(intro, lowBreak, highBreak, buildup, dropA, dropB, outro) {}
+//   playPhrase(phrase) {}
+// }
 
-module.exports = Song;
+// module.exports = Song;
