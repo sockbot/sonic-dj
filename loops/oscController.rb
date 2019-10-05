@@ -28,6 +28,7 @@ end
 
 use_debug false
 use_osc_logging false
+use_osc "localhost", 4560
 
 define :parse_sync_address do |address|
   v = get_event(address).to_s.split(",")[6] #[address.length+1..-2].to_i
@@ -189,13 +190,16 @@ end
 
 
 live_loop :metro do #metronome to sync stuff together
+  osc "/beat"
   sleep 1
 end
 
 live_loop :new_bar do
+  osc "/bar"
   sleep 4
 end
 
 live_loop :new_phrase do
+  osc "/phrase"
   sleep 16
 end
