@@ -10,6 +10,7 @@ function App() {
       <section className="middle">
         <Logo />
       </section>
+      <section className="right">Set Recommended</section>
     </main>
   );
 }
