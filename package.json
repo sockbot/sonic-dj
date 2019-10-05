@@ -17,7 +17,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "sonic-pi-start": "sonic-pi-tool eval-file loops/oscController.rb",
+    "sonic-pi-stop": "sonic-pi-tool stop"
   },
   "eslintConfig": {
     "extends": "react-app"
