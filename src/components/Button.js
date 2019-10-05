@@ -9,7 +9,7 @@ function Button(props) {
     active: active
   });
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} onClick={() => onClick(`${label}`)}>
       {label}
     </button>
   );
