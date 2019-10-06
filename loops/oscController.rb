@@ -9,8 +9,6 @@
 #This version uses 11 push buttons on TouchOSC for input and 1 LED on TouchOSC for output
 #Can be modified to use any suitable OSC source thant can give on/off signals when a button is pressed
 
-# require '~/lighthouse/sonic-dj/loops/loops.rb'
-
 use_real_time
 use_bpm 100
 path="~/lighthouse/sonic-dj/samples/"
@@ -25,6 +23,150 @@ define :beep_lead do
     end
   end
 end
+
+define :silly_lead do
+  use_synth :dsaw
+  notes = (scale :e2, :minor_pentatonic, num_octaves: 2)
+  8.times do
+    16.times do
+      play notes.choose, release: 0.1, cutoff: rrand(70, 120)
+      sleep 0.25
+    end
+  end
+end
+
+define :flanged_lead do
+  with_fx :flanger do
+    2.times do
+      sample :loop_garzul, amp: 0.5, beat_stretch: 16
+      sleep 16
+    end
+  end
+end
+
+define :industrial_lead do
+  2.times do
+    4.times do
+      sample :loop_industrial, beat_stretch: 2, amp: 1
+      sleep 2
+    end
+    4.times do
+      sample :loop_industrial, beat_stretch: 2, amp: 1
+      sample :elec_lo_snare
+      sleep 0.5
+      sample :elec_blip
+      sleep 0.5
+      sample :elec_blip
+      sleep 0.25
+      sample :elec_blip
+      sleep 0.25
+      sample :elec_blip
+      sleep 0.25
+      sample :elec_blip
+      sleep 0.25
+    end
+  end
+end
+
+define :electro_lead do
+  with_fx :bitcrusher do
+    8.times do
+      notes = (scale :e1, :minor_pentatonic, num_octaves: 2).shuffle
+      s = synth :dsaw, note: :e3, sustain: 4, note_slide: 0.04, release: 0, amp: 0.5
+      16.times do
+        sleep 0.25
+        control s, note: notes.tick
+      end
+    end
+  end
+end
+
+define :simple_bass do
+  64.times do
+    sample :bd_haus
+    sleep 0.5
+  end
+end
+
+define :echo_bass do
+  with_fx :echo do
+    32.times do
+      sample :bd_haus
+      sleep 1
+    end
+  end
+end
+
+define :dub_bass do
+  with_fx :slicer, phase: [0.25, 0.5].choose, invert_wave: 1, wave: 0 do
+    8.times do
+      bass_line = (knit :e1, 3, [:c1, :c2].choose, 1)
+      s = synth :square, note: bass_line.tick, sustain: 4, cutoff: 60
+      control s, cutoff_slide: 4, cutoff: 120
+      sleep 4
+    end
+  end
+end
+
+define :distort_bass do
+  with_fx :distortion do
+    2.times do
+      8.times do
+        sample :bass_dnb_f, pitch: 0, finish: 0.6
+        sleep 1
+      end
+      8.times do
+        sample :bass_dnb_f, pitch: 1, finish: 0.6
+        sleep 1
+      end
+    end
+  end
+end
+
+define :groovy_bass do
+  8.times do
+    sample :loop_breakbeat, beat_stretch: 4, amp: 3
+    sleep 4
+  end
+end
+
+define :amen_drum do
+  8.times do
+    p = [0.125, 0.25, 0.5].choose
+    with_fx :slicer, phase: p, wave: 0, mix: rrand(0.7, 1) do
+      sample :loop_amen, beat_stretch: 4, rate: 1, amp: 2
+    end
+    sleep 4
+  end
+end
+
+define :basic_drum do
+  with_fx :reverb do
+    8.times do
+      sample :drum_heavy_kick
+      sleep 0.5
+      sample :drum_heavy_kick
+      sleep 0.5
+      sample :drum_heavy_kick
+      sample :drum_cymbal_closed
+      sleep 0.5
+      sample :drum_heavy_kick
+      sleep 0.25
+      sample :drum_heavy_kick
+      sleep 0.25
+      sample :drum_heavy_kick
+      sleep 0.5
+      sample :drum_heavy_kick
+      sleep 0.5
+      sample :drum_cymbal_closed
+      sleep 0.5
+      sample :drum_heavy_kick
+      sleep 0.5
+    end
+  end
+end
+
+
 
 use_debug false
 use_osc_logging false
@@ -61,28 +203,56 @@ define :doCommandSelect do |n|
   puts n
   case n
   when 1
-    doLoop 1,0.5,:loop_amen,4 #parameters: channel,vol,samplename,beatstrech value
+    #parameters: channel,vol,samplename,beatstrech value
+    in_thread do
+      doLoop 1, 1, beep_lead, 1
+    end
   when 2
-    doLoop 2,0.5,:loop_garzul,16
+    in_thread do
+      doLoop 2, 1, silly_lead, 1
+    end
   when 3
-    doLoop 3,0.8,:loop_compus,16
+    in_thread do
+      doLoop 3, 1, flanged_lead, 1
+    end
   when 4
-    doLoop 4,0.9,:loop_mehackit1,4
+    in_thread do
+      doLoop 4, 1, industrial_lead, 1
+    end
   when 5
-    doLongNote 5,0.5,:fm,:c3,4 #parameters channel, vol,synth,note,repeat duration*****
-    #*** can add an optiona beat_stretch, but probably not required
+    in_thread do
+      doLoop 5, 1, electro_lead, 1
+    end
   when 6
-    doLoopSequence 6,0.3,:tb303 #parameters channel, vol,synth
+    in_thread do
+      doLoop 6, 1, simple_bass, 1
+    end
   when 7
-    doLoop 7,0.7,:loop_mika, 16
+    in_thread do
+      doLoop 7, 1, echo_bass, 1
+    end
   when 8
-    doLoop 8,0.7, :loop_weirdo, 4
+    in_thread do
+      doLoop 8, 1, dub_bass, 1
+    end
   when 9
-    doLoop 9,0.9,:loop_safari,16 #doSingleSample
+    in_thread do
+      doLoop 9, 1, distort_bass, 1
+    end
   when 10
-    doLoop 10,0.7, :loop_mehackit2,4
+    in_thread do
+      doLoop 10, 1, groovy_bass, 1
+    end
   when 11
-    doOneShot 11,4,path+"shoryuken.wav" #parameters channel,vol,sample
+    in_thread do
+      doLoop 11, 1, amen_drum, 1
+    end
+  when 12
+    in_thread do
+      doLoop 12, 1, basic_drum, 1
+    end
+  when 13
+    doOneShot 13,4,path+"shoryuken.wav" #parameters channel,vol,sample
     #as a singleShot plays once so only sync the start
   else
     puts "nothing"
@@ -104,7 +274,7 @@ define :doLoop do |n,vol,sampleName,bs,|
       sleep 0.1
     end
   end
-  live_loop  ln, sync: :new_bar do
+  live_loop  ln, sync: :metro do
     s=sample sampleName,beat_stretch: bs,amp: vol
     set ("s"+n.to_s).to_sym,s
     k=(bs/0.1).to_i
@@ -117,7 +287,7 @@ end
 
 #general function to start stoppable single shot sample
 define :doOneShot do |n,vol,sampleName,bs=0|
-  sync :new_bar
+  sync :metro
   if bs >0
     s=sample sampleName,beat_stretch: bs,amp: vol
   else
@@ -209,11 +379,3 @@ live_loop :metro do #metronome to sync stuff together
   beat_counter += 1
   sleep 1
 end
-
-# live_loop :new_bar do
-#   sleep 4
-# end
-
-# live_loop :new_phrase do
-#   sleep 16
-# end
