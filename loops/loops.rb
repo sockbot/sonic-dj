@@ -36,7 +36,7 @@ define :industrial_lead do
       sleep 2
     end
     4.times do
-      sample :loop_industrial, beat_stretch: 2, amp: 1
+      sample :loop_industrial, beat_stretch: 2, amp: 1l
       sample :elec_lo_snare
       sleep 0.5
       sample :elec_blip
