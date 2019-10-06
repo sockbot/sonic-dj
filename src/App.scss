@@ -1,4 +1,23 @@
 .layout {
   display: flex;
   justify-content: space-around;
+  background-color: #134f4d;
+  bottom: 100px;
+  height: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.samples {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clear {
+  margin: 20%;
 }
