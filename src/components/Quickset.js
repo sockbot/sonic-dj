@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../components/Button";
+import SetButton from "../components/SetButton";
 
 import "./Quickset.scss";
 
@@ -16,7 +17,11 @@ function Quickset(props) {
 
   return (
     <div class="quickset">
-      <button class="quickset-button">{quicksetAction}</button>
+      <SetButton
+        label={props.label}
+        color={props.color}
+        onclick={props.quicksetAction}
+      />
       <div class="button-row">{buttonRow}</div>
     </div>
   );
