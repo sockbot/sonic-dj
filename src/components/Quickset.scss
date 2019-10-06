@@ -1,3 +1,13 @@
+
+.quickset-button {
+  box-shadow: none;
+  &.active {
+    box-shadow: none;
+  }
+  &:hover {
+  }
+}
+
 .button-row {
   display: flex;
   flex-direction: row;

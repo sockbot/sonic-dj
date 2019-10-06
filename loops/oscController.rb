@@ -28,7 +28,7 @@ end
 
 use_debug false
 use_osc_logging false
-use_osc "localhost", 4560
+use_osc "localhost", 14560
 
 define :parse_sync_address do |address|
   v = get_event(address).to_s.split(",")[6] #[address.length+1..-2].to_i
@@ -185,21 +185,35 @@ define :doLoopSequence do |n,vol,synth|
       stop if get(("kill"+n.to_s).to_sym)
     end
   end
-  
 end
 
+beat_counter = 0 # 4 beats per bar
+bar_counter = 0 # 8 bars per phrase
+phrase_counter = 0 # 6 phrases per song
 
 live_loop :metro do #metronome to sync stuff together
-  osc "/beat"
+  if !beat_counter.zero? && beat_counter % 4 == 0 then
+    beat_counter = 0
+    bar_counter += 1
+  end
+  if !bar_counter.zero? && bar_counter % 8 == 0 then
+    bar_counter = 0
+    phrase_counter += 1
+  end
+  if !phrase_counter.zero? && phrase_counter % 6 == 0 then
+    phrase_counter = 0
+    bar_counter = 0
+    beat_counter = 0
+  end
+  osc "/beat", beat_counter, bar_counter, phrase_counter
+  beat_counter += 1
   sleep 1
 end
 
-live_loop :new_bar do
-  osc "/bar"
-  sleep 4
-end
+# live_loop :new_bar do
+#   sleep 4
+# end
 
-live_loop :new_phrase do
-  osc "/phrase"
-  sleep 16
-end
+# live_loop :new_phrase do
+#   sleep 16
+# end
