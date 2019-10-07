@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function useApplicationData() {
+export default function useIndexState() {
   const [activeIndex, setActiveIndex] = React.useState({
     loops: {
       Lead: null,

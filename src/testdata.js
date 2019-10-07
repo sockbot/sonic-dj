@@ -76,25 +76,25 @@ const quicksetAction = "Set Recommended";
 const buttons = [
   {
     colLabel: "Lead",
-    label: "JUMPING",
+    label: "b",
     onClick: () => alert("jumping"),
     active: true
   },
   {
     colLabel: "Bass",
-    label: "JACK",
+    label: "f",
     onClick: () => alert("jack"),
     active: false
   },
   {
     colLabel: "Drum",
-    label: "FLASH",
+    label: "g",
     onClick: () => alert("flash"),
     active: true
   },
   {
     colLabel: "Rise",
-    label: "HOME",
+    label: "k",
     onClick: () => alert("flash"),
     active: true
   }
@@ -105,19 +105,19 @@ const quicksets = [
     label: "Set Recommended",
     color: "green",
     buttons: buttons,
-    quicksetAction: "Set Recommended"
+    quicksetAction: "recommended"
   },
   {
     label: "Set Currently Playing",
     color: "blue",
     buttons: buttons,
-    quicksetAction: "Set Currently Playing"
+    quicksetAction: "current"
   },
   {
     label: "Set Previously Played",
     color: "red",
     buttons: buttons,
-    quicksetAction: "Set Previously Played"
+    quicksetAction: "previous"
   }
 ];
 

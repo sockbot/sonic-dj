@@ -1,16 +1,16 @@
 import React from "react";
-import Button from "../components/Button";
+import QuickButton from "../components/QuickButton";
 import SetButton from "../components/SetButton";
 
 import "./Quickset.scss";
 
 function Quickset(props) {
-  const { buttons, quicksetAction } = props;
+  const { buttons, quicksetAction, onClick } = props;
   const buttonRow = buttons.map(button => {
     return (
       <div>
         {button.colLabel}
-        <Button label={button.label} active={button.active} />
+        <QuickButton label={button.label} active={button.active} />
       </div>
     );
   });

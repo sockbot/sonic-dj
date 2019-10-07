@@ -6,7 +6,3 @@ export default function activeIndexMessage(input) {
     ws.send(input);
   });
 }
-
-ws.on("message", function incoming(data) {
-  console.log(data);
-});

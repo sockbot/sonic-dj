@@ -4,15 +4,20 @@ import Progressbar from "./components/Progressbar";
 import ButtonGrid from "./components/ButtonGrid";
 import Quickset from "./components/Quickset";
 import SetButton from "./components/SetButton";
-import useApplicationData from "./components/useApplicationData";
-
+import useIndexState from "./components/useIndexState";
+import useQuicksetState from "./components/useQuicksetState";
 import { columns, quicksetAction, buttons, quicksets } from "./testdata";
 
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const { activeIndex, indexSetter, indexClearer } = useApplicationData();
+  const { activeIndex, indexSetter, indexClearer } = useIndexState();
+  const {
+    quicksetIndex,
+    setQuicksetIndex,
+    quicksetSetter
+  } = useQuicksetState();
   return (
     <main className="layout">
       <section className="samples">
@@ -41,7 +46,7 @@ function App() {
           <Quickset
             label={quickset.label}
             color={quickset.color}
-            buttons={quickset.buttons}
+            buttons={quickset.buttons} //quicksetIndex["quicksets"][0][quickset.quicksetAction]
             quicksetAction={quickset.quicksetAction}
           />
         ))}
