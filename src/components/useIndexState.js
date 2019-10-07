@@ -1,5 +1,5 @@
 import React from "react";
-
+import { sendLoopData } from "./websocketfunctions";
 export default function useIndexState() {
   const [activeIndex, setActiveIndex] = React.useState({
     loops: {
@@ -23,6 +23,7 @@ export default function useIndexState() {
         loops: { ...activeIndex["loops"], [label]: index }
       });
     }
+    sendLoopData(activeIndex);
   };
 
   const indexClearer = function() {

@@ -1,8 +1,8 @@
-const WebSocket = require("ws");
-const ws = new WebSocket("ws://localhost:8000");
+import openSocket from "socket.io-client";
+const socket = openSocket("http://localhost:8000");
 
-export default function activeIndexMessage(input) {
-  ws.on("open", function open() {
-    ws.send(input);
-  });
+function sendLoopData(data) {
+  socket.emit("btnPressed", data);
 }
+
+export { sendLoopData };
