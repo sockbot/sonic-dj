@@ -4,13 +4,16 @@ const columns = [
     activeIndex: 0,
     buttons: [
       {
-        label: "a"
+        label: "a",
+        index: 0
       },
       {
-        label: "b"
+        label: "b",
+        index: 1
       },
       {
-        label: "c"
+        label: "c",
+        index: 2
       }
     ]
   },
@@ -19,13 +22,16 @@ const columns = [
     activeIndex: 1,
     buttons: [
       {
-        label: "d"
+        label: "d",
+        index: 0
       },
       {
-        label: "e"
+        label: "e",
+        index: 1
       },
       {
-        label: "f"
+        label: "f",
+        index: 2
       }
     ]
   },
@@ -34,13 +40,16 @@ const columns = [
     activeIndex: null,
     buttons: [
       {
-        label: "g"
+        label: "g",
+        index: 0
       },
       {
-        label: "h"
+        label: "h",
+        index: 1
       },
       {
-        label: "i"
+        label: "i",
+        index: 2
       }
     ]
   },
@@ -49,13 +58,16 @@ const columns = [
     activeIndex: 2,
     buttons: [
       {
-        label: "j"
+        label: "j",
+        index: 0
       },
       {
-        label: "k"
+        label: "k",
+        index: 1
       },
       {
-        label: "l"
+        label: "l",
+        index: 2
       }
     ]
   }
