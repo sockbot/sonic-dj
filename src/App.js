@@ -4,6 +4,7 @@ import Progressbar from "./components/Progressbar";
 import ButtonGrid from "./components/ButtonGrid";
 import Quickset from "./components/Quickset";
 import SetButton from "./components/SetButton";
+import useApplicationData from "./components/useApplicationData";
 
 import { columns, quicksetAction, buttons, quicksets } from "./testdata";
 
@@ -11,6 +12,8 @@ import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const { activeIndex, indexSetter } = useApplicationData();
+  console.log(activeIndex);
   return (
     <main className="layout">
       <section className="samples">
@@ -24,7 +27,7 @@ function App() {
           <Progressbar />
         </section>
         <section className="buttongrid">
-          <ButtonGrid columns={columns} />
+          <ButtonGrid columns={columns} onClick={indexSetter} />
         </section>
         <section className="clear">
           <SetButton label="CLEAR" color="lightblue" />

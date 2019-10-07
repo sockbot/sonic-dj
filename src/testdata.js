@@ -4,13 +4,16 @@ const columns = [
     activeIndex: 0,
     buttons: [
       {
-        label: "a"
+        label: "a",
+        index: 0
       },
       {
-        label: "b"
+        label: "b",
+        index: 1
       },
       {
-        label: "c"
+        label: "c",
+        index: 2
       }
     ]
   },
