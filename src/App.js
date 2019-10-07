@@ -13,7 +13,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const { activeIndex, indexSetter } = useApplicationData();
-  console.log(activeIndex);
   return (
     <main className="layout">
       <section className="samples">
@@ -27,7 +26,11 @@ function App() {
           <Progressbar />
         </section>
         <section className="buttongrid">
-          <ButtonGrid columns={columns} onClick={indexSetter} />
+          <ButtonGrid
+            columns={columns}
+            onClick={indexSetter}
+            activeIndex={activeIndex}
+          />
         </section>
         <section className="clear">
           <SetButton label="CLEAR" color="lightblue" />

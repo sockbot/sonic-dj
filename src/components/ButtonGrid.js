@@ -3,7 +3,7 @@ import ButtonColumn from "./ButtonColumn";
 import "./ButtonGrid.scss";
 
 function ButtonGrid(props) {
-  const { columns, onClick } = props;
+  const { columns, onClick, activeIndex } = props;
   const buttonGrid = columns.map(column => {
     return (
       <ButtonColumn
@@ -11,6 +11,7 @@ function ButtonGrid(props) {
         activeIndex={column.activeIndex}
         buttons={column.buttons}
         onClick={onClick}
+        activeIndex={activeIndex}
       />
     );
   });

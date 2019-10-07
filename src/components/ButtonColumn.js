@@ -9,8 +9,9 @@ function ButtonColumn(props) {
     return (
       <Button
         label={button.label}
+        index={button.index}
         colLabel={colLabel}
-        active={activeIndex === index}
+        active={activeIndex["loops"][colLabel] === index}
         onClick={onClick}
       />
     );
