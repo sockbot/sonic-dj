@@ -12,7 +12,7 @@ import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const { activeIndex, indexSetter } = useApplicationData();
+  const { activeIndex, indexSetter, indexClearer } = useApplicationData();
   return (
     <main className="layout">
       <section className="samples">
@@ -33,7 +33,7 @@ function App() {
           />
         </section>
         <section className="clear">
-          <SetButton label="CLEAR" color="lightblue" />
+          <SetButton onClick={indexClearer} label="CLEAR" color="lightblue" />
         </section>
       </section>
       <section className="right">

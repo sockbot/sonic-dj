@@ -25,5 +25,17 @@ export default function useApplicationData() {
     }
   };
 
-  return { activeIndex, indexSetter };
+  const indexClearer = function() {
+    setActiveIndex({
+      loops: {
+        Lead: null,
+        Bass: null,
+        Drum: null,
+        Rise: null
+      },
+      sample: null
+    });
+  };
+
+  return { activeIndex, indexSetter, indexClearer };
 }
