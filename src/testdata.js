@@ -1,102 +1,89 @@
 const columns = [
   {
     colLabel: "Lead",
-    activeIndex: 0,
     buttons: [
       {
-        label: "a",
-        index: 0
+        label: "Silly",
+        index: "silly_lead"
       },
       {
-        label: "b",
-        index: 1
+        label: "Flanged",
+        index: "flanged_lead"
       },
       {
-        label: "c",
-        index: 2
+        label: "Electro",
+        index: "electro_lead"
       }
     ]
   },
   {
     colLabel: "Bass",
-    activeIndex: 1,
     buttons: [
       {
-        label: "d",
-        index: 0
+        label: "Dub",
+        index: "dub_bass"
       },
       {
-        label: "e",
-        index: 1
+        label: "Echo",
+        index: "echo_bass"
       },
       {
-        label: "f",
-        index: 2
+        label: "Simple",
+        index: "simple_bass"
       }
     ]
   },
   {
     colLabel: "Drum",
-    activeIndex: null,
     buttons: [
       {
-        label: "g",
-        index: 0
+        label: "Groovy",
+        index: "groovy_drum"
       },
       {
-        label: "h",
-        index: 1
+        label: "Amen",
+        index: "amen_drum"
       },
       {
-        label: "i",
-        index: 2
+        label: "Basic",
+        index: "basic_drum"
       }
     ]
   },
   {
     colLabel: "Rise",
-    activeIndex: 2,
     buttons: [
       {
-        label: "j",
-        index: 0
+        label: "Snare",
+        index: "snare_rise"
       },
       {
-        label: "k",
-        index: 1
+        label: "second",
+        index: "second_rise"
       },
       {
-        label: "l",
-        index: 2
+        label: "third",
+        index: "third_rise"
       }
     ]
   }
 ];
-const quicksetAction = "Set Recommended";
 const buttons = [
   {
-    colLabel: "Lead",
-    label: "b",
-    onClick: () => alert("jumping"),
-    active: true
+    label: "Shoryuken",
+    index: "shoryuken_sample"
   },
   {
-    colLabel: "Bass",
-    label: "f",
-    onClick: () => alert("jack"),
-    active: false
+    label: "Air Horn",
+    index: "airhorn_sample"
   },
   {
-    colLabel: "Drum",
-    label: "g",
-    onClick: () => alert("flash"),
-    active: true
+    label: "Siren",
+    index: "siren_sample"
   },
   {
-    colLabel: "Rise",
-    label: "k",
-    onClick: () => alert("flash"),
-    active: true
+    label: "Laser",
+    index: "laser_sample"
   }
 ];
 
@@ -121,4 +108,4 @@ const quicksets = [
   }
 ];
 
-export { columns, quicksetAction, buttons, quicksets };
+export { columns, buttons, quicksets };

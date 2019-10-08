@@ -1,19 +1,19 @@
 import React from "react";
-import QuickButton from "../components/QuickButton";
+import SampleButton from "../components/SampleButton";
 import SetButton from "../components/SetButton";
 
-import "./Quickset.scss";
+import "./Sampleset.scss";
 
-function Quickset(props) {
-  const { buttons, quickset, onClick } = props;
+function Sampleset(props) {
+  const { buttons, quicksetAction, onClick } = props;
   const buttonRow = buttons.map(button => {
     return (
       <div>
-        {button.colLabel}
-        <QuickButton
+        <SampleButton
           label={button.label}
           active={button.active}
           onClick={onClick}
+          index={button.index}
         />
       </div>
     );
@@ -21,10 +21,14 @@ function Quickset(props) {
 
   return (
     <div class="quickset">
-      <SetButton label={props.label} color={props.color} onClick={quickset} />
+      <SetButton
+        label={props.label}
+        color={props.color}
+        onclick={props.quicksetAction}
+      />
       <div class="button-row">{buttonRow}</div>
     </div>
   );
 }
 
-export default Quickset;
+export default Sampleset;

@@ -1,34 +1,48 @@
 import React from "react";
+import { sendLoopData } from "./websocketfunctions";
+import useIndexState from "./useIndexState";
 
 export default function useQuicksetState() {
+  const {
+    activeIndex,
+    indexSetter,
+    indexClearer,
+    sampleSetter
+  } = useIndexState();
   const [quicksetIndex, setQuicksetIndex] = React.useState({
     quicksets: [
       {
-        recommended: {
-          Lead: 1,
-          Bass: null,
-          Drum: null,
-          Rise: null,
-          active: null
-        }
+        buttons: [
+          { colLabel: "Lead", label: "electro" },
+          { colLabel: "Bass", label: "electro" },
+          { colLabel: "Drum", label: "electro" },
+          { colLabel: "Rise", label: "electro" }
+        ],
+        color: "green",
+        label: "Set Recommended",
+        quicksetAction: "recommended"
       },
       {
-        current: {
-          Lead: 2,
-          Bass: null,
-          Drum: null,
-          Rise: null,
-          active: null
-        }
+        buttons: [
+          { colLabel: "Lead", label: "electro" },
+          { colLabel: "Bass", label: "electro" },
+          { colLabel: "Drum", label: "electro" },
+          { colLabel: "Rise", label: "electro" }
+        ],
+        color: "blue",
+        label: "Set Currently Playing",
+        quicksetAction: "current"
       },
       {
-        previous: {
-          Lead: null,
-          Bass: null,
-          Drum: 3,
-          Rise: null,
-          active: null
-        }
+        buttons: [
+          { colLabel: "Lead", label: "electro" },
+          { colLabel: "Bass", label: "electro" },
+          { colLabel: "Drum", label: "electro" },
+          { colLabel: "Rise", label: "electro" }
+        ],
+        color: "red",
+        label: "Set Previously Played",
+        quicksetAction: "previous"
       }
     ]
   });
@@ -40,5 +54,25 @@ export default function useQuicksetState() {
     });
   };
 
-  return { quicksetIndex, setQuicksetIndex, quicksetSetter };
+  const setPrevious = function(newLead, newBass, newDrum, newRise) {
+    let newState = { ...quicksetIndex };
+    let newValue = {
+      buttons: [
+        { colLabel: "Lead", label: newLead },
+        { colLabel: "Bass", label: newBass },
+        { colLabel: "Drum", label: newDrum },
+        { colLabel: "Rise", label: newRise }
+      ],
+      color: "red",
+      label: "Set Previously Played",
+      quicksetAction: "previous"
+    };
+    newState.quicksets[2] = newValue;
+
+    setQuicksetIndex({
+      ...newState
+    });
+    sendLoopData(quicksetIndex["quicksets"][2]["buttons"]);
+  };
+  return { quicksetIndex, setQuicksetIndex, quicksetSetter, setPrevious };
 }

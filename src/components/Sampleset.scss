@@ -1,0 +1,35 @@
+.sampleset-button {
+  box-shadow: none;
+  &.active {
+    box-shadow: none;
+  }
+  &:hover {
+  }
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Turret Road", cursive;
+    font-size: 30px;
+  }
+}
+
+.quickset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: none;
+  &.active {
+    box-shadow: none;
+  }
+  &:hover {
+  }
+  margin: 5%;
+}
