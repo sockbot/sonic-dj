@@ -26,6 +26,14 @@ export default function useIndexState() {
     sendLoopData(activeIndex);
   };
 
+  const sampleSetter = function(blank, blank2, sound) {
+    setActiveIndex({
+      ...activeIndex,
+      sample: sound
+    });
+    sendLoopData(activeIndex);
+  };
+
   const indexClearer = function() {
     setActiveIndex({
       loops: {
@@ -38,5 +46,5 @@ export default function useIndexState() {
     });
   };
 
-  return { activeIndex, indexSetter, indexClearer };
+  return { activeIndex, indexSetter, indexClearer, sampleSetter };
 }

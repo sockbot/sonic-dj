@@ -2,14 +2,13 @@ import React from "react";
 import QuickButton from "../components/QuickButton";
 import SetButton from "../components/SetButton";
 
-import "./Quickset.scss";
+import "./Sampleset.scss";
 
-function Quickset(props) {
+function Sampleset(props) {
   const { buttons, quicksetAction, onClick } = props;
   const buttonRow = buttons.map(button => {
     return (
       <div>
-        {button.colLabel}
         <QuickButton
           label={button.label}
           active={button.active}
@@ -31,4 +30,4 @@ function Quickset(props) {
   );
 }
 
-export default Quickset;
+export default Sampleset;

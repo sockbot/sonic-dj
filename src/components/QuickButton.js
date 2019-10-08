@@ -8,7 +8,10 @@ function QuickButton(props) {
     active: active
   });
   return (
-    <button className={buttonClass} onClick={() => onClick(colLabel, index)}>
+    <button
+      className={buttonClass}
+      onClick={() => onClick(colLabel, index, label)}
+    >
       {label}
     </button>
   );

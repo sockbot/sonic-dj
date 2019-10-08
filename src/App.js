@@ -3,6 +3,7 @@ import Logo from "./components/Logo";
 import Progressbar from "./components/Progressbar";
 import ButtonGrid from "./components/ButtonGrid";
 import Quickset from "./components/Quickset";
+import Sampleset from "./components/Sampleset";
 import SetButton from "./components/SetButton";
 import useIndexState from "./components/useIndexState";
 import useQuicksetState from "./components/useQuicksetState";
@@ -12,16 +13,27 @@ import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const { activeIndex, indexSetter, indexClearer } = useIndexState();
+  const {
+    activeIndex,
+    indexSetter,
+    indexClearer,
+    sampleSetter
+  } = useIndexState();
   const {
     quicksetIndex,
     setQuicksetIndex,
     quicksetSetter
   } = useQuicksetState();
+  console.log(quicksetIndex["quicksets"]);
   return (
     <main className="layout">
       <section className="samples">
-        <Quickset label="Samples" color="#6D3015" buttons={buttons} />
+        <Sampleset
+          label="Samples"
+          color="#6D3015"
+          buttons={buttons}
+          onClick={sampleSetter}
+        />
       </section>
       <section className="middle">
         <section className="logo">
@@ -42,11 +54,11 @@ function App() {
         </section>
       </section>
       <section className="right">
-        {quicksets.map(quickset => (
+        {quicksetIndex["quicksets"].map(quickset => (
           <Quickset
             label={quickset.label}
             color={quickset.color}
-            buttons={quickset.buttons} //quicksetIndex["quicksets"][0][quickset.quicksetAction]
+            buttons={quickset.buttons} //quicksetIndex["quicksets"][0]
             quicksetAction={quickset.quicksetAction}
           />
         ))}

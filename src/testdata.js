@@ -4,15 +4,15 @@ const columns = [
     activeIndex: 0,
     buttons: [
       {
-        label: "a",
+        label: "Beep",
         index: 0
       },
       {
-        label: "b",
+        label: "Silly",
         index: 1
       },
       {
-        label: "c",
+        label: "Flanged",
         index: 2
       }
     ]
@@ -22,15 +22,15 @@ const columns = [
     activeIndex: 1,
     buttons: [
       {
-        label: "d",
+        label: "Simple",
         index: 0
       },
       {
-        label: "e",
+        label: "Echo",
         index: 1
       },
       {
-        label: "f",
+        label: "Dub",
         index: 2
       }
     ]
@@ -40,11 +40,11 @@ const columns = [
     activeIndex: null,
     buttons: [
       {
-        label: "g",
+        label: "Amen",
         index: 0
       },
       {
-        label: "h",
+        label: "Basic",
         index: 1
       },
       {
@@ -58,7 +58,7 @@ const columns = [
     activeIndex: 2,
     buttons: [
       {
-        label: "j",
+        label: "Snare",
         index: 0
       },
       {
@@ -76,25 +76,25 @@ const quicksetAction = "Set Recommended";
 const buttons = [
   {
     colLabel: "Lead",
-    label: "b",
+    label: "Shoryuken",
     onClick: () => alert("jumping"),
     active: true
   },
   {
     colLabel: "Bass",
-    label: "f",
+    label: "Air Horn",
     onClick: () => alert("jack"),
     active: false
   },
   {
     colLabel: "Drum",
-    label: "g",
+    label: "Siren",
     onClick: () => alert("flash"),
     active: true
   },
   {
     colLabel: "Rise",
-    label: "k",
+    label: "AK-47",
     onClick: () => alert("flash"),
     active: true
   }

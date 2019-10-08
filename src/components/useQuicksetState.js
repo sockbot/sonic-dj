@@ -4,31 +4,37 @@ export default function useQuicksetState() {
   const [quicksetIndex, setQuicksetIndex] = React.useState({
     quicksets: [
       {
-        recommended: {
-          Lead: 1,
-          Bass: null,
-          Drum: null,
-          Rise: null,
-          active: null
-        }
+        buttons: [
+          { colLabel: "Lead", label: "electro" },
+          { colLabel: "Bass", label: "electro" },
+          { colLabel: "Drum", label: "electro" },
+          { colLabel: "Rise", label: "electro" }
+        ],
+        color: "green",
+        label: "Set Recommended",
+        quicksetAction: "recommended"
       },
       {
-        current: {
-          Lead: 2,
-          Bass: null,
-          Drum: null,
-          Rise: null,
-          active: null
-        }
+        buttons: [
+          { colLabel: "Lead", label: "electro" },
+          { colLabel: "Bass", label: "electro" },
+          { colLabel: "Drum", label: "electro" },
+          { colLabel: "Rise", label: "electro" }
+        ],
+        color: "blue",
+        label: "Set Currently Playing",
+        quicksetAction: "current"
       },
       {
-        previous: {
-          Lead: null,
-          Bass: null,
-          Drum: 3,
-          Rise: null,
-          active: null
-        }
+        buttons: [
+          { colLabel: "Lead", label: "electro" },
+          { colLabel: "Bass", label: "electro" },
+          { colLabel: "Drum", label: "electro" },
+          { colLabel: "Rise", label: "electro" }
+        ],
+        color: "red",
+        label: "Set Previously Played",
+        quicksetAction: "previous"
       }
     ]
   });
