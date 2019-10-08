@@ -1,14 +1,7 @@
 import React from "react";
 import { sendLoopData } from "./websocketfunctions";
-import useIndexState from "./useIndexState";
 
 export default function useQuicksetState() {
-  const {
-    activeIndex,
-    indexSetter,
-    indexClearer,
-    sampleSetter
-  } = useIndexState();
   const [quicksetIndex, setQuicksetIndex] = React.useState({
     quicksets: [
       {

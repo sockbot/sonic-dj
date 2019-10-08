@@ -8,8 +8,7 @@ export default function useIndexState() {
       Bass: null,
       Drum: null,
       Rise: null
-    },
-    sample: null
+    }
   });
 
   const indexSetter = function(collabel, index) {
@@ -24,7 +23,6 @@ export default function useIndexState() {
         loops: { ...activeIndex["loops"], [collabel]: index }
       });
     }
-    sendLoopData(activeIndex);
   };
 
   const sampleSetter = function(sound) {
@@ -32,7 +30,6 @@ export default function useIndexState() {
       ...activeIndex,
       sample: sound
     });
-    sendLoopData(activeIndex);
   };
 
   const indexClearer = function() {
@@ -46,6 +43,10 @@ export default function useIndexState() {
       sample: null
     });
   };
+
+  React.useEffect(() => {
+    sendLoopData(activeIndex);
+  }, [activeIndex]);
 
   return { activeIndex, indexSetter, indexClearer, sampleSetter };
 }
