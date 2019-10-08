@@ -5,4 +5,9 @@ function sendLoopData(data) {
   socket.emit("btnPressed", data);
 }
 
-export { sendLoopData };
+function sendSampleData(data) {
+  let sampleObj = { sample: data };
+  socket.emit("btnPressed", sampleObj);
+}
+
+export { sendLoopData, sendSampleData };

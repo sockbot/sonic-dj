@@ -25,7 +25,6 @@ function App() {
     quicksetSetter,
     setPrevious
   } = useQuicksetState();
-  console.log(quicksetIndex["quicksets"]);
   return (
     <main className="layout">
       <section className="samples">
