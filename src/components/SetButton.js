@@ -13,7 +13,7 @@ function SetButton(props) {
     <button
       className={setbuttonClass}
       style={{ "background-color": color }}
-      onClick={() => onClick()}
+      onClick={() => onClick("test")}
     >
       {label}
     </button>

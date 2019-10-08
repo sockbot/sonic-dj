@@ -5,13 +5,13 @@ import "./ButtonColumn.scss";
 
 function ButtonColumn(props) {
   const { colLabel, activeIndex, buttons, onClick } = props;
-  const buttonColumn = buttons.map((button, index) => {
+  const buttonColumn = buttons.map(button => {
     return (
       <Button
         label={button.label}
         index={button.index}
         colLabel={colLabel}
-        active={activeIndex["loops"][colLabel] === index}
+        active={activeIndex["loops"][colLabel] === button.index}
         onClick={onClick}
       />
     );

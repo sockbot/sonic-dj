@@ -1,102 +1,89 @@
 const columns = [
   {
     colLabel: "Lead",
-    activeIndex: 0,
     buttons: [
       {
-        label: "Beep",
-        index: 0
-      },
-      {
         label: "Silly",
-        index: 1
+        index: "silly_lead"
       },
       {
         label: "Flanged",
-        index: 2
+        index: "flanged_lead"
+      },
+      {
+        label: "Electro",
+        index: "electro_lead"
       }
     ]
   },
   {
     colLabel: "Bass",
-    activeIndex: 1,
     buttons: [
       {
-        label: "Simple",
-        index: 0
+        label: "Dub",
+        index: "dub_bass"
       },
       {
         label: "Echo",
-        index: 1
+        index: "echo_bass"
       },
       {
-        label: "Dub",
-        index: 2
+        label: "Simple",
+        index: "simple_bass"
       }
     ]
   },
   {
     colLabel: "Drum",
-    activeIndex: null,
     buttons: [
       {
+        label: "Groovy",
+        index: "groovy_drum"
+      },
+      {
         label: "Amen",
-        index: 0
+        index: "amen_drum"
       },
       {
         label: "Basic",
-        index: 1
-      },
-      {
-        label: "i",
-        index: 2
+        index: "basic_drum"
       }
     ]
   },
   {
     colLabel: "Rise",
-    activeIndex: 2,
     buttons: [
       {
         label: "Snare",
-        index: 0
+        index: "snare_rise"
       },
       {
-        label: "k",
-        index: 1
+        label: "second",
+        index: "second_rise"
       },
       {
-        label: "l",
-        index: 2
+        label: "third",
+        index: "third_rise"
       }
     ]
   }
 ];
-const quicksetAction = "Set Recommended";
 const buttons = [
   {
-    colLabel: "Lead",
     label: "Shoryuken",
-    onClick: () => alert("jumping"),
-    active: true
+    index: "shoryuken_sample"
   },
   {
-    colLabel: "Bass",
     label: "Air Horn",
-    onClick: () => alert("jack"),
-    active: false
+    index: "airhorn_sample"
   },
   {
-    colLabel: "Drum",
     label: "Siren",
-    onClick: () => alert("flash"),
-    active: true
+    index: "siren_sample"
   },
   {
-    colLabel: "Rise",
-    label: "AK-47",
-    onClick: () => alert("flash"),
-    active: true
+    label: "Laser",
+    index: "laser_sample"
   }
 ];
 
@@ -121,4 +108,4 @@ const quicksets = [
   }
 ];
 
-export { columns, quicksetAction, buttons, quicksets };
+export { columns, buttons, quicksets };

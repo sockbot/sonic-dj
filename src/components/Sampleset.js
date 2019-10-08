@@ -1,5 +1,5 @@
 import React from "react";
-import QuickButton from "../components/QuickButton";
+import SampleButton from "../components/SampleButton";
 import SetButton from "../components/SetButton";
 
 import "./Sampleset.scss";
@@ -9,10 +9,11 @@ function Sampleset(props) {
   const buttonRow = buttons.map(button => {
     return (
       <div>
-        <QuickButton
+        <SampleButton
           label={button.label}
           active={button.active}
           onClick={onClick}
+          index={button.index}
         />
       </div>
     );

@@ -5,7 +5,7 @@ import SetButton from "../components/SetButton";
 import "./Quickset.scss";
 
 function Quickset(props) {
-  const { buttons, quicksetAction, onClick } = props;
+  const { buttons, quickset, onClick } = props;
   const buttonRow = buttons.map(button => {
     return (
       <div>
@@ -21,11 +21,7 @@ function Quickset(props) {
 
   return (
     <div class="quickset">
-      <SetButton
-        label={props.label}
-        color={props.color}
-        onclick={props.quicksetAction}
-      />
+      <SetButton label={props.label} color={props.color} onClick={quickset} />
       <div class="button-row">{buttonRow}</div>
     </div>
   );

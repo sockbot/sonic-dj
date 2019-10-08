@@ -22,7 +22,8 @@ function App() {
   const {
     quicksetIndex,
     setQuicksetIndex,
-    quicksetSetter
+    quicksetSetter,
+    setPrevious
   } = useQuicksetState();
   console.log(quicksetIndex["quicksets"]);
   return (
@@ -59,7 +60,8 @@ function App() {
             label={quickset.label}
             color={quickset.color}
             buttons={quickset.buttons} //quicksetIndex["quicksets"][0]
-            quicksetAction={quickset.quicksetAction}
+            onClick={indexSetter}
+            quickset={setPrevious}
           />
         ))}
       </section>
