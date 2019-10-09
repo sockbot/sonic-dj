@@ -31,7 +31,7 @@ export default class BarCounter extends Component {
       <section className="barTracker">
         <section className="counter">{this.state.bar}/8</section>
         <section className="progress">
-          <Progressbar />
+          <Progressbar progress={this.state.phrase} />
         </section>
       </section>
     );
