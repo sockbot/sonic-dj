@@ -14,8 +14,8 @@ export default class BarCounter extends Component {
   }
 
   componentDidMount() {
-    const trackSetter = function(type, value) {
-      this.state = { [type]: value };
+    const trackSetter = (type, value) => {
+      this.setState({ [type]: value });
     };
     socket.on("bar", message => {
       trackSetter("bar", message + 1);
