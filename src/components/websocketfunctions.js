@@ -10,4 +10,19 @@ function sendSampleData(data) {
   socket.emit("samplePressed", sampleObj);
 }
 
-export { sendLoopData, sendSampleData };
+let currentBar = 0;
+
+function getCurrentBar() {
+  return currentBar;
+}
+
+socket.on("bar", message => {
+  console.log(message + 1);
+  currentBar = message + 1;
+});
+
+socket.on("phrase", message => {
+  console.log(message + 1);
+});
+
+export { sendLoopData, sendSampleData, getCurrentBar };
