@@ -14,14 +14,16 @@ export default class BarCounter extends Component {
       this.setState({ [type]: value });
     };
     socket.on("bar", message => {
-      trackSetter("bar", message + 1);
+      if (message == 8) {
+        trackSetter("phrase", 7);
+        trackSetter("bar", message + 1);
+      } else {
+        trackSetter("bar", message + 1);
+      }
     });
     socket.on("phrase", message => {
       trackSetter("phrase", message + 1);
     });
-    if (this.state.bar == 9) {
-      trackSetter("phrase", 7);
-    }
   }
 
   render() {

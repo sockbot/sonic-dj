@@ -6,7 +6,7 @@ export default function useQuicksetState() {
     quicksets: [
       {
         buttons: [
-          { colLabel: "Lead", label: "Electro" },
+          { colLabel: "Lead", label: "electro" },
           { colLabel: "Bass", label: "electro" },
           { colLabel: "Drum", label: "electro" },
           { colLabel: "Rise", label: "electro" }
