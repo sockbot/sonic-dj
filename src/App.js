@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "./components/Logo";
 import Progressbar from "./components/Progressbar";
+import BarCounter from "./components/BarCounter";
 import ButtonGrid from "./components/ButtonGrid";
 import Quickset from "./components/Quickset";
 import Sampleset from "./components/Sampleset";
@@ -39,8 +40,8 @@ function App() {
         <section className="logo">
           <Logo />
         </section>
-        <section className="progress">
-          <Progressbar />
+        <section className="barcounter">
+          <BarCounter />
         </section>
         <section className="buttongrid">
           <ButtonGrid

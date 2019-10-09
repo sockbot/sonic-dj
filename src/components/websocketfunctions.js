@@ -1,4 +1,5 @@
 import openSocket from "socket.io-client";
+
 const socket = openSocket("http://localhost:8000");
 
 function sendLoopData(data) {
@@ -10,4 +11,4 @@ function sendSampleData(data) {
   socket.emit("samplePressed", sampleObj);
 }
 
-export { sendLoopData, sendSampleData };
+export { sendLoopData, sendSampleData, socket };
