@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./BarCounter.scss";
 //import useTrackState from "./useTrackState";
-import openSocket, socket from "socket.io-client";
+import openSocket from "socket.io-client";
 import Progressbar from "./Progressbar";
 //const { trackState, trackSetter } = useTrackState();
-import { socket } from "./websocketfunctions"
+import { socket } from "./websocketfunctions";
 
 //const socket = openSocket("http://localhost:8000");
 

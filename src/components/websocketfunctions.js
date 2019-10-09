@@ -11,4 +11,4 @@ function sendSampleData(data) {
   socket.emit("btnPressed", sampleObj);
 }
 
-export { sendLoopData, sendSampleData };
+export { sendLoopData, sendSampleData, socket };
