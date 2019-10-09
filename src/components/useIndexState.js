@@ -4,7 +4,7 @@ import { sendLoopData } from "./websocketfunctions";
 export default function useIndexState() {
   const [activeIndex, setActiveIndex] = React.useState({
     loops: {
-      Lead: null,
+      Lead: "silly_lead",
       Bass: null,
       Drum: null,
       Rise: null

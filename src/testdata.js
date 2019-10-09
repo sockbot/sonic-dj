@@ -58,17 +58,17 @@ const columns = [
         index: "snare_rise"
       },
       {
-        label: "second",
+        label: "Second",
         index: "second_rise"
       },
       {
-        label: "third",
+        label: "Third",
         index: "third_rise"
       }
     ]
   }
 ];
-const buttons = [
+const samples = [
   {
     label: "Shoryuken",
     index: "shoryuken_sample"
@@ -87,25 +87,4 @@ const buttons = [
   }
 ];
 
-const quicksets = [
-  {
-    label: "Set Recommended",
-    color: "green",
-    buttons: buttons,
-    quicksetAction: "recommended"
-  },
-  {
-    label: "Set Currently Playing",
-    color: "blue",
-    buttons: buttons,
-    quicksetAction: "current"
-  },
-  {
-    label: "Set Previously Played",
-    color: "red",
-    buttons: buttons,
-    quicksetAction: "previous"
-  }
-];
-
-export { columns, buttons, quicksets };
+export { columns, samples };
