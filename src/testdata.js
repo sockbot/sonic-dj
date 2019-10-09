@@ -82,8 +82,8 @@ const buttons = [
     index: "siren_sample"
   },
   {
-    label: "Laser",
-    index: "laser_sample"
+    label: "Torpedo",
+    index: "photontorpedo_sample"
   }
 ];
 
