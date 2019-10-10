@@ -8,7 +8,7 @@ import Sampleset from "./components/Sampleset";
 import SetButton from "./components/SetButton";
 import useIndexState from "./components/useIndexState";
 import useQuicksetState from "./components/useQuicksetState";
-import { columns, quicksetAction, buttons, quicksets } from "./testdata";
+import { columns, samples } from "./testdata";
 
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,7 +32,7 @@ function App() {
         <Sampleset
           label="Samples"
           color="#6D3015"
-          buttons={buttons}
+          buttons={samples}
           onClick={sampleSetter}
         />
       </section>

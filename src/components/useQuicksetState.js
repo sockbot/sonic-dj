@@ -1,5 +1,5 @@
 import React from "react";
-import { sendLoopData } from "./websocketfunctions";
+//import { sendLoopData } from "./websocketfunctions";
 
 export default function useQuicksetState() {
   const [quicksetIndex, setQuicksetIndex] = React.useState({
@@ -12,7 +12,7 @@ export default function useQuicksetState() {
           { colLabel: "Rise", label: "electro" }
         ],
         color: "green",
-        label: "Set Recommended",
+        label: "Recommended",
         quicksetAction: "recommended"
       },
       {
@@ -23,7 +23,7 @@ export default function useQuicksetState() {
           { colLabel: "Rise", label: "electro" }
         ],
         color: "blue",
-        label: "Set Currently Playing",
+        label: "Currently Playing",
         quicksetAction: "current"
       },
       {
@@ -34,7 +34,7 @@ export default function useQuicksetState() {
           { colLabel: "Rise", label: "electro" }
         ],
         color: "red",
-        label: "Set Previously Played",
+        label: "Previously Played",
         quicksetAction: "previous"
       }
     ]
@@ -65,7 +65,8 @@ export default function useQuicksetState() {
     setQuicksetIndex({
       ...newState
     });
-    sendLoopData(quicksetIndex["quicksets"][2]["buttons"]);
+    //sendLoopData(quicksetIndex["quicksets"][2]["buttons"]);
   };
+
   return { quicksetIndex, setQuicksetIndex, quicksetSetter, setPrevious };
 }

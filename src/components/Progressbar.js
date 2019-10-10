@@ -42,6 +42,13 @@ function Progressbar(props) {
       <ProgressBar
         striped
         animated
+        variant={props.progress === 7 ? "danger" : "warning"}
+        now={2}
+        key={7}
+      />
+      <ProgressBar
+        striped
+        animated
         variant={props.progress === 5 ? "danger" : null}
         now={17}
         key={5}
