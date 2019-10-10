@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sonic DJ
 
-## Available Scripts
+Sonic DJ is a is a casual DJ experience for DJs without experience.
 
-In the project directory, you can run:
+## How it works
 
-### `npm start`
+Sonic DJ is a user-friendly interface for Sonic Pi, a programmable synthesizer. People new to being a DJ can use Sonic DJ to create EDM music in a structured and interactive way without having any musical training. Beat matching, selecting samples, loop timing, and song structure are all programmed into Sonic Pi, enabling users to immediately start creating structured music from unstructured sounds.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Sonic DJ's UI is built using React on the front end. Communication with Sonic Pi is bridged with socket.io and osc-js on the back end using the Open Sound Control protocol.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Lead, bass, drum and rise loops are programmed in Ruby and interpreted in Sonic Pi. The Sonic Pi emits a heartbeat and musical phrasing markers which are captured and interpreted by the Sonic DJ bridging server. The Sonic DJ UI sends the commands to the Sonic DJ bridging server containing the sounds the user wants to play. At the appropriate timing and trigger points, the Sonic DJ bridging server sends commands back to the Sonic Pi which plays the sounds.
 
-### `npm test`
+## Technologies and Frameworks
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Front End
 
-### `npm run build`
+- React
+- HTML/CSS
+- SASS
+- Storybook
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Back End
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Node
+- socket.io
+- Sonic Pi
+- osc-js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Languages
 
-### `npm run eject`
+- Javascript
+- Ruby
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Install dependencies with `npm install`.
+2. Install the Sonic DJ server from: https://github.com/sockbot/sonic-dj-ws-osc and install its dependencies by running `npm install`
+3. Install Sonic Pi from sonic-pi.net
+4. Install sonic-pi-tool from https://github.com/lpil/sonic-pi-tool
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Start the software
 
-## Learn More
+1. Start the sonic-dj project by running `npm start`
+2. Start the sonic-dj-ws-osc project by running `npm start`
+3. Start Sonic Pi
+4. Run the Sonic Pi script from the sonic-dj-ws-osc project folder by running `npm run sonic-pi-start`
+5. The Sonic DJ interface is available at http://localhost:3000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Sonic DJ](https://github.com/sockbot/sonic-dj/blob/master/docs/sonic-dj-ui.png)
+![Sonic Pi](https://github.com/sockbot/sonic-dj/blob/master/docs/sonic-pi-ui.png)
