@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "./components/Logo";
-import Progressbar from "./components/Progressbar";
 import BarCounter from "./components/BarCounter";
 import ButtonGrid from "./components/ButtonGrid";
 import Quickset from "./components/Quickset";
@@ -23,8 +22,7 @@ function App() {
   const {
     quicksetIndex,
     setQuicksetIndex,
-    quicksetSetter,
-    setPrevious
+    quicksetSetter
   } = useQuicksetState();
   return (
     <main className="layout">
@@ -41,7 +39,7 @@ function App() {
           <Logo />
         </section>
         <section className="barcounter">
-          <BarCounter />
+          <BarCounter activeIndex={activeIndex} />
         </section>
         <section className="buttongrid">
           <ButtonGrid
@@ -61,7 +59,6 @@ function App() {
             color={quickset.color}
             buttons={quickset.buttons} //quicksetIndex["quicksets"][0]
             onClick={indexSetter}
-            quickset={setPrevious}
           />
         ))}
       </section>

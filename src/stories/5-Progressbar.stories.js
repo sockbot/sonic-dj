@@ -8,4 +8,4 @@ export default {
 
 export const progressbar = () => <Progressbar />;
 
-export const changePosition = () => <Progressbar progress="BreakB" />;
+export const changePosition = () => <Progressbar progress={6} />;
