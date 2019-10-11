@@ -37,14 +37,14 @@ Lead, bass, drum and rise loops are programmed in Ruby and interpreted in Sonic 
 
 1. Install dependencies with `npm install`.
 2. Install the Sonic DJ server from: https://github.com/sockbot/sonic-dj-ws-osc and install its dependencies by running `npm install`
-3. Install Sonic Pi from sonic-pi.net
+3. Install Sonic Pi 3.x and above from sonic-pi.net
 4. Install sonic-pi-tool from https://github.com/lpil/sonic-pi-tool
 
 ### Start the software
 
 1. Start the sonic-dj project by running `npm start`
 2. Start the sonic-dj-ws-osc project by running `npm start`
-3. Start Sonic Pi
+3. Start Sonic Pi. Enable the OSC server in Prefs > IO > Enable OSC server.
 4. Run the Sonic Pi script from the sonic-dj-ws-osc project folder by running `npm run sonic-pi-start`
 5. The Sonic DJ interface is available at http://localhost:3000
 
